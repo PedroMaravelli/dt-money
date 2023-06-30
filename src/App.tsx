@@ -1,14 +1,17 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/themes/DefaultTheme";
 import { GloabalStyle } from "./styles/global";
-import Transaction from "./pages/Transactions";
+import {Transactions} from "./pages/Transactions";
+import { TransactionsProvider } from "./context/TransactionsContext";
 
 export function App() {
   
   return (
     <ThemeProvider theme={defaultTheme}>
       <GloabalStyle/>
-      <Transaction/>
+      <TransactionsProvider>
+        <Transactions/>
+      </TransactionsProvider>
       
 
 
